@@ -1,0 +1,43 @@
+.iconButton {
+  padding: 0 15px;
+  background-color: white;
+  border-radius: 8px;
+  border: 1px solid black;
+  color: black;
+  width: fit-content;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
+  outline: none;
+  height: 38px;
+  line-height: 36px;
+}
+
+.iconButton:hover {
+  background-color: #EFEFEF;
+}
+
+
+.iconButton__colored {
+  border: 1px solid #EE7722;
+  color: #EE7722;
+}
+
+.iconButton__colored:hover {
+  background-color: #FCF7F2;
+}
+
+.iconButton__coloredSolid {
+  border: none;
+  background-color: #EE7722;
+  color: white;
+}
+
+.iconButton__coloredSolid:hover {
+  background-color: #F08A42;
+}
+
+.iconButton__disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}

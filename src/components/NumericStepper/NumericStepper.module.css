@@ -1,0 +1,40 @@
+.numericStepper {
+  display: flex;
+  width: 100px;
+  justify-content: space-between;
+  border-radius: 8px;
+  border: 1px solid #EE7722;
+  height: 38px;
+  align-items: stretch;
+  line-height: 36px;
+}
+
+.numericStepper__value {
+  width: 60px;
+  text-align: center;
+}
+
+.numericStepper__decrease, .numericStepper__increase {
+  background-color: white;
+  border: none;
+  width: 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+  outline: none;
+}
+
+.numericStepper__increase {
+  border-left: 1px solid #EE7722;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+    
+}
+
+.numericStepper__decrease {
+  border-right: 1px solid #EE7722;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}

@@ -1,0 +1,12 @@
+.productsSection {
+  padding-top: 60px;
+}
+
+.productsTitle {
+  margin-bottom: 30px;
+}
+
+.productsList {
+  display: flex;
+  flex-wrap: wrap;
+}

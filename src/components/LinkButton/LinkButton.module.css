@@ -1,0 +1,35 @@
+.linkButton {
+  padding: 0 15px;
+  background-color: white;
+  border-radius: 8px;
+  border: 1px solid black;
+  color: black;
+  height: 38px;
+  line-height: 36px;
+  font-weight: bold;
+  width: fit-content;
+  display: block;
+}
+
+.linkButton:hover {
+  background-color: #EFEFEF;
+}
+
+.linkButton__colored {
+  border: 1px solid #EE7722;
+  color: #EE7722;
+}
+
+.linkButton__colored:hover {
+  background-color: #FCF7F2;
+}
+
+.linkButton__coloredSolid {
+  border: none;
+  background-color: #EE7722;
+  color: white;
+}
+
+.linkButton__coloredSolid:hover {
+  background-color: #F08A42;
+}

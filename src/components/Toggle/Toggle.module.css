@@ -1,0 +1,36 @@
+.toggle {
+  height: 38px;
+  line-height: 36px;
+  border: 1px solid #EE7722;
+  border-radius: 8px;
+  display: flex;
+}
+
+.toggle__radio {
+  visibility: hidden;
+  height: 0;
+  width: 0;
+}
+
+.toggle__valueLeft {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.toggle__valueRight {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.toggle__value {
+  cursor: pointer;
+  padding: 0 10px;
+   border: 1px solid transparent;
+}
+
+.toggle__valueActive {
+  background-color: #EE7722;
+  color: white;
+  border: 1px solid white;
+}
+

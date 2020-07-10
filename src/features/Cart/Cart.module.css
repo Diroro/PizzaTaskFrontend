@@ -1,0 +1,36 @@
+/* move to some 'button' style and component */
+
+.backButton {
+  padding: 10px;
+  background-color: white;
+  border-radius: 8px;
+  border: 1px solid gray;
+  width: fit-content;
+}
+
+.backButton a {
+  color: #222222;
+  font-weight: bold;
+}
+
+.cart {
+  padding: 60px 0;
+}
+
+
+.cart__order {
+  display: flex;
+  /* justify-content: space-between; */
+  /* possibly on lower screens this will not be displayed */
+}
+
+.cart__title {
+  margin-bottom: 30px;
+  font-size: 36px;
+}
+
+@media (max-width: 1124px) {
+  .cart__order {
+    flex-direction: column-reverse;
+  }
+} 

@@ -1,0 +1,42 @@
+.main {
+  min-height: calc(100vh - 200px);
+  margin: auto;
+  width: 1280px;
+}
+
+@media (max-width: 1380px) {
+  .main {
+    width: 1024px;
+  }
+}
+
+@media (max-width: 1124px) {
+  .main {
+    width: 800px;
+  }
+}
+
+@media (max-width: 900px) {
+  .main {
+    width: 640px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main {
+    width: 100%;
+    padding: 0 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main {
+    padding: 0 40px;
+  }
+}
+
+@media (max-width: 400px) {
+  .main {
+    padding: 0 30px;
+  }
+}

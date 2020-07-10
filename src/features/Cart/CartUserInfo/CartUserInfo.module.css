@@ -1,0 +1,25 @@
+.userInfo {
+  width: 50%;
+}
+
+.userInfo h2 {
+  margin-bottom: 30px;
+}
+
+.userInfo__form {
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.userInfo__actions {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+
+@media (max-width: 1124px) {
+  .userInfo {
+    width: 100%;
+  }
+}

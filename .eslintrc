@@ -1,0 +1,89 @@
+{
+  "env": {
+      "es6": true,
+      "node": true
+  },
+  "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended",
+      "plugin:prettier/recommended",
+      "plugin:@typescript-eslint/eslint-recommended"
+  ],
+  "globals": {
+      "Atomics": "readonly",
+      "SharedArrayBuffer": "readonly"
+  },
+  "settings": {
+      "react": {
+          "createClass": "createReactClass",
+          "pragma": "React",
+          "version": "detect",
+          "flowVersion": "0.53"
+      }
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+      "ecmaFeatures": {
+          "jsx": true
+      },
+      "ecmaVersion": 2018,
+      "sourceType": "module"
+  },
+  "plugins": [
+      "react",
+      "@typescript-eslint",
+      "eslint-plugin-import",
+      "sort-class-members",
+      "prettier",
+      "unused-imports",
+      "jsx-a11y"
+  ],
+  "rules": {
+      "no-bitwise": 2,
+      "no-caller": 2,
+      "no-shadow": 0,
+      "no-console": 2,
+      "sort-keys": 0,
+      "sort-imports": 0,
+      "camelcase": 0,
+      "max-len": 0,
+      "no-unused-expressions": 0,
+      "no-extra-boolean-cast": 0,
+      "no-cond-assign": 2,
+      "object-shorthand": 2,
+      "interface-name-prefix": 0,
+      "no-prototype-builtins": 0,
+      "no-case-declarations": 0,
+      "react/prop-types": 0,
+      "react/jsx-no-target-blank": 0,
+      "react/no-unescaped-entities": 0,
+      "react/no-children-prop": 0,
+      "react/display-name": 0,
+      "react/jsx-key": 0,
+      "react/jsx-boolean-value": 2,
+      "react/jsx-curly-brace-presence": [2, "never"],
+      "import/no-default-export": 2,
+      "import/first": 2,
+      "import/order": 2,
+      "@typescript-eslint/no-var-requires": 2,
+      "@typescript-eslint/explicit-member-accessibility": 0,
+      "sort-class-members/sort-class-members": 0,
+      "no-unused-vars": [2, {
+          "vars": "all", "args": "none", "ignoreRestSiblings": true
+      }],
+      "no-multiple-empty-lines": [2, {
+      "max": 1
+      }],
+      "@typescript-eslint/array-type": [2, {
+          "default": "array"
+      }],
+      "unused-imports/no-unused-imports-ts": 2,
+      "prettier/prettier": [2, {}, {
+          "usePrettierrc": true
+      }],
+      "padding-line-between-statements": [2, 
+          {"blankLine": "always", "prev": "import", "next": "*"},
+          {"blankLine": "never", "prev": "import", "next": "import"}
+      ]
+  }
+}

@@ -1,0 +1,164 @@
+.orderItem {
+  list-style: none;
+  padding: 20px 0;
+  border-top: 1px solid lightgray;
+}
+
+.orderItem:last-child {
+  border-bottom: 1px solid lightgray;
+  margin-bottom: 30px;
+}
+
+.orderItem__description {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.orderItem__description > div {
+  flex: 2;
+  margin-right: 10px;
+}
+
+div.orderItem__price {
+  flex: 2;
+  font-weight: bold;
+  /* min-width: 185px; */
+}
+
+div.orderItem__toggle {
+  display: flex;
+  justify-content: flex-end;
+  flex: 1;
+  margin-right: 0;
+}
+
+.orderItem__date {
+  display: flex;
+  justify-content: center;
+}
+
+.orderItem__arrow {
+  height: 38px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  background-color: #EE7722;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  padding: 0 15px;
+}
+
+.orderItem__productList {
+  margin-top: 30px;
+}
+
+.orderItem__deliveryInformation {
+  list-style: none;
+  margin-top: 15px;
+}
+
+.orderItem__arrowIcon {
+  color: white;
+  width: 25px;
+}
+
+.orderItem__product {
+  display: flex;
+  height: 50px;
+  align-items: center;
+  padding-left: 150px;
+}
+
+.orderItem__product > div {
+  display: flex;
+  justify-content: flex-start;
+  margin-right: 10px;
+}
+
+div.orderItem__productImage {
+  height: 40px;
+  width: 40px;
+  flex: 1;
+  max-width: 40px;
+}
+
+div.orderItem__productName {
+  flex: 3;
+  margin-left: 20px;
+  font-weight: bold;
+}
+
+div.orderItem__productQuantity {
+  flex: 1;
+  justify-content: flex-end;
+  min-width: 100px;
+  margin-right: 0;
+}
+
+.orderItem__productPrice {
+  flex: 2;
+  font-weight: bold;
+}
+
+.orderItem__productImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .orderItem__description {
+    flex: 1;
+  }
+
+  .orderItem__product {
+    padding-left: 60px;
+  }
+
+  div.orderItem__productName {
+    flex: 3;
+    font-weight: bold;
+  }
+
+}
+
+@media (max-width: 600px) {
+  .orderItem__product {
+    padding-left: 20px;
+  }
+  .orderItem__productPrice {
+    flex: 1;
+    font-weight: bold;
+  }
+}
+
+@media (max-width: 480px) {
+  
+  .orderItem__description {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+  .orderItem__description > div {
+    width: 100px;
+    justify-content: flex-start;
+  }
+
+  .orderItem__priceLabel, .orderItem__productQuantityLabel, .orderItem_idLabel  {
+    display: none;
+  }
+
+  div.orderItem__productQuantity, div.orderItem__productPrice {
+    flex: none;
+    min-width: 15px;
+  }
+
+  .orderItem__product {
+    padding-left: 0px;
+  }
+
+}

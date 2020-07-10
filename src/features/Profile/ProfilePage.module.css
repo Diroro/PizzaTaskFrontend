@@ -1,0 +1,31 @@
+.profilePage {
+  padding-top: 60px;
+}
+
+.profilePage h2 {
+  font-size: 36px;
+}
+
+.profilePage__orderList {
+  margin-top: 30px;
+  width: 60%;
+}
+
+.profilePage__actions {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}
+
+@media (max-width: 1380px) {
+  .profilePage__orderList {
+    width: 80%;
+  }
+}
+
+@media (max-width: 1124px) {
+  .profilePage__orderList {
+    width: 100%;
+  }
+}
