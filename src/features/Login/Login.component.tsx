@@ -58,9 +58,7 @@ export const LoginComponent: React.FC<Props> = ({onLogin}) => {
           disabled={isButtonDisabled}
           label='Login'
         />
-        {/* MAKE AN ORDER BUTTON SHOULD BE DISABLED OR DISAPPEAR WHEN NO PRODUCTS ARE SELECTED OR NO QUANTITY OF ALL PRODUCTS */}
       </div>
     </section>
   );
-  // GO TO MENU BUTTON
 };

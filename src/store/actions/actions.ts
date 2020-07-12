@@ -6,6 +6,8 @@ import {
   SetCurrencyAction,
   ClearOrderAction,
   SaveDeliveryCostAction,
+  ErrorOrderAction,
+  ClearOrderErrorAction,
 } from './cartActions';
 import {SaveUserAction, SaveOrdersListAction} from './loginActions';
 
@@ -15,6 +17,8 @@ export type ApplicationAction = Action<ActionTypes> &
     | ProductsSuccessAction
     | ProductsErrorAction
     | SaveOrderAction
+    | ErrorOrderAction
+    | ClearOrderErrorAction
     | SaveDeliveryCostAction
     | ClearOrderAction
     | SetCurrencyAction
@@ -34,7 +38,8 @@ export enum ActionTypes {
   setCurrency = 'setCurrency',
   addCustomerInfo = 'AddCustomerInfo',
   orderSuccess = 'OrderSuccess',
-  orderError = 'OrderError',
+  errorOrder = 'OrderError',
+  clearErrorOrder = 'clearErrorOrder',
   saveUser = 'SaveUser',
   saveOrdersList = 'SaveOrdersList',
 }

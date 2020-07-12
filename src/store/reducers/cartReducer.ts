@@ -7,6 +7,7 @@ export interface CartState {
   loading: boolean;
   currency: Currency;
   deliveryCost: number;
+  error?: string;
 }
 
 export const emptyDraftOrder: DraftOrder = {
@@ -50,6 +51,21 @@ export const cartReducer = (state: CartState = defaultState, action: Application
         deliveryCost: action.cost,
       };
     }
+
+    case ActionTypes.errorOrder: {
+      return {
+        ...state,
+        error: action.error,
+      };
+    }
+
+    case ActionTypes.clearErrorOrder: {
+      return {
+        ...state,
+        error: undefined,
+      };
+    }
+
     default:
       return state;
   }

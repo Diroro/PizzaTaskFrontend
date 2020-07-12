@@ -21,7 +21,13 @@ export const SuccessOrderComponent: React.FC = memo(() => {
       });
     }, REDIRECT_TIMEOUT);
 
-    return () => window.clearTimeout(timeout);
+    return () => {
+      dispatch({
+        type: ActionTypes.saveOrder,
+        newOrder: emptyDraftOrder,
+      });
+      window.clearTimeout(timeout);
+    };
   }, [needRedirect, setNeedRedirect, dispatch]);
 
   return needRedirect ? (
@@ -29,7 +35,7 @@ export const SuccessOrderComponent: React.FC = memo(() => {
   ) : (
     <div className={s.successOrder}>
       <h2>Order is successfully created!</h2>
-      You will be redirect to menu in 3 sec...
+      You will be redirected to the menu in 3 sec...
     </div>
   );
 });

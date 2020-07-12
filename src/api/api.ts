@@ -45,11 +45,10 @@ const createApiClient = (baseHref: string, extraHeaders?: object): ApiClient => 
     };
 
     const response = await fetch(url, init);
-
-    // need to handle error!
-    // if (response.error) {
-    //   throw new Error (response.error)
-    // }
+    if (!response.ok) {
+      const {status, statusText} = response;
+      throw new Error(`${status}: ${statusText}`);
+    }
 
     const text = await response.text();
     return text === '' ? undefined : JSON.parse(text);

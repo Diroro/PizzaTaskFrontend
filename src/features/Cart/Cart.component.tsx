@@ -1,5 +1,6 @@
 import React, {memo, useEffect} from 'react';
 import {Order, OrderStatus} from '../../domain/order.domain';
+import {ErrorMessageContainer} from '../ErrorMessage/ErrorMessage.container';
 import {SuccessOrderComponent} from './SuccessOrder/SuccessOrder.component';
 import {CartStatusComponent} from './CartStatus/CartStatus.component';
 import s from './Cart.module.css';
@@ -9,15 +10,9 @@ import {CartItemsListContainer} from './CartItemsList/CartItemsList.container';
 interface Props {
   order?: Order;
   createEmptyDraftOrder: () => void;
+  error?: string;
 }
-export const CartComponent: React.FC<Props> = memo(({order, createEmptyDraftOrder}) => {
-  // TITLE like 'Cart'
-  // list
-  // stages (cart, оформление заказа, success)
-
-  // total cost  (including delivery)
-  // buttons Back to menu ,  Make an order (заказать - подумать как перевести)
-  // may be we should get from selector only order status
+export const CartComponent: React.FC<Props> = memo(({order, createEmptyDraftOrder, error}) => {
   useEffect(() => {
     if (order === undefined) {
       createEmptyDraftOrder();
@@ -27,6 +22,11 @@ export const CartComponent: React.FC<Props> = memo(({order, createEmptyDraftOrde
   if (order === undefined) {
     return null;
   }
+
+  if (error) {
+    return <ErrorMessageContainer title='Order error' errorText={error} />;
+  }
+
   let content: React.ReactNode = null;
 
   switch (order.status) {
@@ -44,16 +44,10 @@ export const CartComponent: React.FC<Props> = memo(({order, createEmptyDraftOrde
     }
 
     case OrderStatus.success: {
-      content = <SuccessOrderComponent />; //= <SuccessOrderMessage />; // with redirect message
-      break;
-    }
-
-    case OrderStatus.error: {
-      content = null; // <ErrorMessage /> // please try later
+      content = <SuccessOrderComponent />;
       break;
     }
   }
-  // MAKE MANY 'SECTIONS' in the app
   return (
     <section className={s.cart}>
       <h2 className={s.cart__title}>Cart</h2>

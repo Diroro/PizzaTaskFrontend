@@ -1,5 +1,3 @@
-// NEXT MOVE TO productService
-
 import {Product, ProductType} from '../domain/product.domain';
 import {apiClient} from './api';
 

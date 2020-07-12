@@ -10,7 +10,6 @@ const orderSelector = (state: ApplicationState) => state.cart.order;
 
 export const CartContainer: React.FC<{}> = () => {
   const order = useShallowSelector(orderSelector);
-  // may be it's not needed!
   const dispatch = useDispatch();
 
   const createEmptyDraftOrder = () =>
@@ -18,6 +17,8 @@ export const CartContainer: React.FC<{}> = () => {
       type: ActionTypes.saveOrder,
       newOrder: emptyDraftOrder,
     });
-
-  return <CartComponent order={order} createEmptyDraftOrder={createEmptyDraftOrder} />;
+  const error = useShallowSelector((state: ApplicationState) => state.cart.error);
+  return (
+    <CartComponent order={order} createEmptyDraftOrder={createEmptyDraftOrder} error={error} />
+  );
 };

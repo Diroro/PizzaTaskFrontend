@@ -13,7 +13,7 @@ export type OrderItem = {
   quantity: number;
 };
 
-export type Order = DraftOrder | ConfirmedOrder | PendingOrder | SuccessOrder | ErrorOrder;
+export type Order = DraftOrder | ConfirmedOrder | PendingOrder | SuccessOrder;
 
 export type DraftOrder = {
   status: OrderStatus.draft;
@@ -47,11 +47,4 @@ export type SuccessOrder = {
   totalPriceEUR: number;
   id: number;
   orderDate: Date;
-};
-
-export type ErrorOrder = {
-  status: OrderStatus.error;
-  items: OrderItem[];
-  customerInfo: CustomerInfo;
-  error: string;
 };
