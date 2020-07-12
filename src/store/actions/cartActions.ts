@@ -14,9 +14,14 @@ import {Product} from '../../domain/product.domain';
 import {ActionTypes, ApplicationThunk} from './actions';
 
 export interface SaveOrderAction extends Action<ActionTypes.saveOrder> {
-  type: ActionTypes.saveOrder;
   newOrder: Order;
 }
+
+export interface ErrorOrderAction extends Action<ActionTypes.errorOrder> {
+  error: string;
+}
+
+export interface ClearOrderErrorAction extends Action<ActionTypes.clearErrorOrder> {}
 
 export interface SetCurrencyAction extends Action<ActionTypes.setCurrency> {
   currency: Currency;
@@ -161,12 +166,20 @@ export const backOrderToDraft = (order: ConfirmedOrder): ApplicationThunk => (di
 };
 
 export const sendOrder = (order: PendingOrder): ApplicationThunk => async (dispatch, getState) => {
-  return orderApi.createOrder(order).then((newOrder) => {
-    dispatch({
-      type: ActionTypes.saveOrder,
-      newOrder,
+  return orderApi
+    .createOrder(order)
+    .then((newOrder) => {
+      dispatch({
+        type: ActionTypes.saveOrder,
+        newOrder,
+      });
+    })
+    .catch((e: Error) => {
+      dispatch({
+        type: ActionTypes.errorOrder,
+        error: e.message,
+      });
     });
-  });
 };
 
 export const getDeliveryCost = (): ApplicationThunk => async (dispatch) => {

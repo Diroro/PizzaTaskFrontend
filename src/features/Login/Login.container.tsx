@@ -10,6 +10,8 @@ import {LoginComponent} from './Login.component';
 export const LoginContainer: React.FC = () => {
   const dispatch = useDispatch();
 
+  // add login error handling;
+
   const onLogin = useCallback(
     (email: string, password: string) => {
       dispatch(login(email, password));

@@ -1,4 +1,5 @@
 import React, {useState, useCallback} from 'react';
+import {isValidPhoneNumber} from 'react-phone-number-input';
 import {LinkButton} from '../../../components/LinkButton/LinkButton';
 import {APP_ROUTES} from '../../../router/Router.component';
 import {ButtonType, Button} from '../../../components/Button/Button';
@@ -11,6 +12,7 @@ import {
 } from '../../../domain/order.domain';
 import {validators, Validator, isOkForAllValidators} from '../../../utils/validators';
 import {User} from '../../../domain/user.domain';
+import {PhoneNumberInput} from '../../../components/PhoneNumberInput/PhoneNumberInput';
 import s from './CartUserInfo.module.css';
 
 const nameValidators: Validator[] = [validators.isNotEmpty, validators.isLessOrEqual100];
@@ -20,12 +22,10 @@ const emailValidators: Validator[] = [
   validators.isLessOrEqual100,
 ];
 const addressValidators: Validator[] = [validators.isNotEmpty, validators.isLessOrEqual255];
-const phoneNumberValidators: Validator[] = [validators.isNotEmpty, validators.isLessOrEqual100];
 
 const isValidName = isOkForAllValidators(nameValidators);
 const isValidAddress = isOkForAllValidators(addressValidators);
 const isValidEmail = isOkForAllValidators(emailValidators);
-const isValidPhoneNumber = isOkForAllValidators(phoneNumberValidators);
 
 interface Props {
   sendOrder: (order: PendingOrder) => void;
@@ -106,11 +106,10 @@ export const CartUserInfoComponent: React.FC<Props> = ({
           onChange={setEmail}
           validators={emailValidators}
         />
-        <TextInput
+        <PhoneNumberInput
           placeholder='Phone number'
           value={phoneNumber}
           onChange={setPhoneNumber}
-          validators={phoneNumberValidators}
         />
       </form>
 

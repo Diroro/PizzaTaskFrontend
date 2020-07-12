@@ -1,15 +1,9 @@
-import {
-  OrderItem,
-  SuccessOrder,
-  OrderStatus,
-  ErrorOrder,
-  PendingOrder,
-} from '../domain/order.domain';
+import {OrderItem, SuccessOrder, OrderStatus, PendingOrder} from '../domain/order.domain';
 import {User} from '../domain/user.domain';
 import {apiClient} from './api';
 
 export const ORDER_URLS = {
-  createOrder: '/orders/create',
+  createOrder: '/orders/created',
   my: '/orders/my',
   deliveryCost: '/orders/delivery-cost',
 };
@@ -42,7 +36,7 @@ const mapOrderResponse = (res: OrderResponse): SuccessOrder => {
   };
 };
 
-const createOrder = async (order: PendingOrder): Promise<SuccessOrder | ErrorOrder> => {
+const createOrder = async (order: PendingOrder): Promise<SuccessOrder> => {
   const {items, customerInfo} = order;
   const {email, address, phoneNumber, customerName} = customerInfo;
 
@@ -51,13 +45,9 @@ const createOrder = async (order: PendingOrder): Promise<SuccessOrder | ErrorOrd
   return apiClient
     .post<OrderResponse>({url: ORDER_URLS.createOrder, body})
     .then(mapOrderResponse)
-    .catch((e) => {
-      return {
-        status: OrderStatus.error as const,
-        items,
-        customerInfo,
-        error: `Order was not send. Error: ${e.message}`,
-      };
+    .catch((e: Error) => {
+      throw new Error(`Order was not send. 
+      ${e.message}`);
     });
 };
 

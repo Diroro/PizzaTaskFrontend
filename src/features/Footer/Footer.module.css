@@ -1,38 +1,42 @@
 
 .footer {
   border-top: 1px solid lightgray;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  width: 100%;
+}
+
+.footer__text {
   width: 1024px;
   margin: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 @media (max-width: 1380px) {
-  .footer {
+  .footer__text {
     width: 1024px;
   }
 }
 @media (max-width: 1124px) {
-  .footer {
+  .footer__text {
     width: 800px;
   }
 }
 
 @media (max-width: 900px) {
-  .footer {
+  .footer__text {
     width: 640px;
   }
 }
 
 @media (max-width: 768px) {
-  .footer {
+  .footer__text {
     width: 100%;
     padding: 20px 60px;
   }
 }
 
 @media (max-width: 480px) {
-  .footer {
+  .footer__text {
     padding: 20px 40px;
   }
 }
